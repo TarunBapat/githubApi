@@ -9,9 +9,16 @@ const GithubApiContextProvider = (props) => {
   };
   const userDataHandler = async () => {
     const response = await fetch(`https://api.github.com/users/${searchValue}`);
-    const data = await response.json();
-    setUserData(data);
-    console.log(userData);
+    try {
+      if (response.ok) {
+        const data = await response.json();
+        setUserData(data);
+      } else {
+        throw new Error("enter a valid user");
+      }
+    } catch (err) {
+      console.log(err.message);
+    }
   };
   let value = {
     searchValue,
