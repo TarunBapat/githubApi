@@ -6,7 +6,6 @@ const GithubApiContextProvider = (props) => {
   const [userData, setUserData] = useState([]);
   const searchDataHandler = (e) => {
     setSearchValue(e.target.value);
-    console.log(searchValue);
   };
   const userDataHandler = async () => {
     const response = await fetch(`https://api.github.com/users/${searchValue}`);

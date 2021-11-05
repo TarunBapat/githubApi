@@ -6,7 +6,6 @@ export default function App() {
     <div>
       <SearchBar />
       <Users />
-      <h1>data initialized</h1>
     </div>
   );
 }
