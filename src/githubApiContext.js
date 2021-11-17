@@ -13,6 +13,7 @@ const GithubApiContextProvider = (props) => {
       if (response.ok) {
         const data = await response.json();
         setUserData(data);
+        console.log(data);
       } else {
         throw new Error("enter a valid user");
       }
