@@ -25,7 +25,7 @@ const UserDetail = () => {
             <>
               <Alert className="alert">
                 {repo.name}
-                <Button className="alert-danger">
+                <Button variant="primary">
                   <a href={repo.html_url} target="_blank">
                     Access Repo
                   </a>
