@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { GithubContext } from "./githubApiContext";
 import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 const Users = () => {
   let { userData } = useContext(GithubContext);
   let style = {
@@ -27,7 +29,9 @@ const Users = () => {
           <b>Total Repos:</b> {userData.public_repos}
         </Card.Text>
 
-        <Button variant="primary">View Detail</Button>
+        <Link to={`/users/${userData.id}`}>
+          <Button variant="primary">View Detail</Button>
+        </Link>
       </Card.Body>
     </Card>
     // <div>
