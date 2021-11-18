@@ -1,6 +1,6 @@
 import react, { useContext, useState } from "react";
 import { GithubContext } from "./githubApiContext";
-import { Button } from "react-bootstrap";
+import { Button, Alert } from "react-bootstrap";
 
 const UserDetail = () => {
   const { userData } = useContext(GithubContext);
@@ -23,7 +23,14 @@ const UserDetail = () => {
         {repos.map((repo) => {
           return (
             <>
-              <p>{repo.name}</p>
+              <Alert className="alert">
+                {repo.name}
+                <Button className="alert-danger">
+                  <a href={repo.html_url} target="_blank">
+                    Access Repo
+                  </a>
+                </Button>
+              </Alert>
             </>
           );
         })}
